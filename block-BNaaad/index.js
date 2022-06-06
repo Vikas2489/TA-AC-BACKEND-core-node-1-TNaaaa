@@ -1,10 +1,4 @@
-// write a function to square a number
 
-function getSquare(num) {
-    return num * 2;
-}
-
-console.log(getSquare(2));
 
 // - Create a file named index.js with console.log('Welcome to Node.js') as script and 
 // run it using script processor mode (`node index.js`)
