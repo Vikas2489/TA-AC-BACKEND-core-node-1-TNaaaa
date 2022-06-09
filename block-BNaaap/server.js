@@ -9,6 +9,7 @@ let http = require("http");
 let server = http.createServer(handleRequest);
 
 function handleRequest(req, res) {
+    console.log(req.method);
     res.statusCode = 201;
     res.setHeader("Content-type", "text/html");
     res.end(`<h1>Welcome to server's response....</h1>`);
@@ -17,5 +18,3 @@ function handleRequest(req, res) {
 server.listen(4444, () => {
     console.log("Started listening..");
 });
-
-// http.get()
