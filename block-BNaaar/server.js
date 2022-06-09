@@ -16,8 +16,8 @@ function handleRequest(request, response) {
         response.setHeader("Content-type", "text/html");
         response.end(`<h2>This is all about NodeJS</h2>`);
     } else if (parsedUrl.pathname === "/about" && request.method === "POST") {
-        console.log(parsedUrl.query);
-        response.end("posted");
+        response.setHeader("content-type", "application/json")
+        response.end(`{message: this is a post request}`);
     }
 }
 
