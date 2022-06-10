@@ -24,6 +24,7 @@ function handleRequest(request, response) {
             }
         })
     } else if (request.method === "GET" && request.url === "/stream") {
+        response.setHeader("content-type", "text/html");
         fs.createReadStream("./node.html").pipe(response);
     }
 }
