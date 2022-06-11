@@ -42,7 +42,7 @@ let server5555 = http.createServer(handleRequestOn5555);
 
 function handleRequestOn5555(req, res) {
     console.log(req.headers['user-agent']);
-    res.end();
+    res.end(req.headers['user-agent']);
 }
 
 server5555.listen(5555);
@@ -72,7 +72,7 @@ let server7000 = http.createServer(handleRequestOn7000);
 
 function handleRequestOn7000(req, res) {
     res.setHeader("Content-type", "application/json");
-    res.end(`${req.headers}`);
+    res.end(JSON.stringify(req.headers));
 }
 
 server7000.listen(7000, () => {
