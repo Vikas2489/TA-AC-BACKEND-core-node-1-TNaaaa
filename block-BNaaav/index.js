@@ -16,9 +16,9 @@ function handleRequest(req, res) {
     } else if (req.url === "/projects" && req.method === "GET") {
         res.setHeader("content-type", "text/html");
         fs.createReadStream(`./Vikas-Singh-Portfolio/projects.html`).pipe(res);
-    } else if (req.url === "/my-pic" && req.method === "GET") {
+    } else if (req.url.split(".").pop() === 'jpeg' && req.method === "GET") {
         res.setHeader("content-type", "image/jpeg");
-        fs.createReadStream(`./Vikas-Singh-Portfolio/Assets/images/my-pic.jpeg`).pipe(res);
+        fs.createReadStream(`./Vikas-Singh-Portfolio/Assets/images/` + req.url).pipe(res);
     }
 }
 
